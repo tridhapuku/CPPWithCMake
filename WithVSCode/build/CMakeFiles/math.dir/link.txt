@@ -1,2 +1,0 @@
-C:\msys64\mingw64\bin\ar.exe qc libmath.a CMakeFiles/math.dir/lib/math/operations.cpp.obj
-C:\msys64\mingw64\bin\ranlib.exe libmath.a

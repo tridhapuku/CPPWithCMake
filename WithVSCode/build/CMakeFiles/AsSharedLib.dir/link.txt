@@ -1,3 +1,0 @@
-"C:\Program Files\CMake\bin\cmake.exe" -E rm -f CMakeFiles\AsSharedLib.dir/objects.a
-C:\msys64\mingw64\bin\ar.exe qc CMakeFiles\AsSharedLib.dir/objects.a @CMakeFiles\AsSharedLib.dir\objects1
-C:\msys64\mingw64\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\AsSharedLib.dir/objects.a -Wl,--no-whole-archive -o bin\AsSharedLib.exe -Wl,--out-implib,bin\libAsSharedLib.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\AsSharedLib.dir\linkLibs.rsp
