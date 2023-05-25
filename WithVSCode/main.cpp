@@ -2,6 +2,9 @@
 
 #include "lib/math/operations.hpp"
 #include <boost/random.hpp>
+#include "TryAlgorithm/SimpleProblems/TryRandomQues.hpp"
+#include "TryAlgorithm/TryCPPLangg/TrySTL.hpp"
+#include "TryAlgorithm/TryDataStructure/TryTrees.hpp"
 
 // #define CMAKEMACROSAMPLE "NO SYSTEM NAME"
 #ifndef CMAKEMACROSAMPLE
@@ -10,6 +13,8 @@
 
 void TestLibMath();
 void TestExternalLib();
+void TryAlgorithm();
+
 
 
 void TestLibMath(){
@@ -46,17 +51,30 @@ void TestExternalLib()
 
 }
 
+void TryAlgorithm()
+{
+    // SimpleProblems::RandomProblems::MainForRandomProblems();
+    // TryCPPLangg::TrySTL::MainForCPPLangg();
+
+    TryDataStructure::TryTrees::mainForTryTrees();
+
+}
+
+
+
 auto sum(int a, int b){
     return a + b;
 }
 
 int main(int, char**) {
     std::cout << "Hello, world with cmake!\n";
-    std::cout << " 5*2 = " << 5 * 2 << std::endl;
-    std::cout<<"Sum of 3 + 4 :"<<sum(3, 4)<<std::endl;
+    // std::cout << " 5*2 = " << 5 * 2 << std::endl;
+    // std::cout<<"Sum of 3 + 4 :"<<sum(3, 4)<<std::endl;
     std::cout << "New variable is " << CMAKEMACROSAMPLE <<std::endl;
 
     // TestLibMath();
-    TestExternalLib();
+    // TestExternalLib();
+    TryAlgorithm();
+    
     return 0;
 }
