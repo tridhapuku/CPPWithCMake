@@ -5,6 +5,10 @@
 #include "TryAlgorithm/SimpleProblems/TryRandomQues.hpp"
 #include "TryAlgorithm/TryCPPLangg/TrySTL.hpp"
 #include "TryAlgorithm/TryDataStructure/TryTrees.hpp"
+#include "TryAlgorithm/TryCPPLangg/TryOOP.hpp"
+#include "TryAlgorithm/TryCPPLangg/TryConcurrency.hpp"
+#include "TryAlgorithm/TryCPPLangg/TryTemplate.hpp"
+#include "TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp"
 
 // #define CMAKEMACROSAMPLE "NO SYSTEM NAME"
 #ifndef CMAKEMACROSAMPLE
@@ -55,9 +59,12 @@ void TryAlgorithm()
 {
     // SimpleProblems::RandomProblems::MainForRandomProblems();
     // TryCPPLangg::TrySTL::MainForCPPLangg();
+    // TryCPPLangg::TryOOP::MainForOOP();
+    // TryCPPLangg::TryConcurrency::MainForConcurrency();
+    // TryDataStructure::TryTrees::mainForTryTrees();
+    // TryCPPLangg::TryTemplate::MainForTemplate();
 
-    TryDataStructure::TryTrees::mainForTryTrees();
-
+    TryCPPLangg::TryCPPConcepts::MainForCPPConcepts();
 }
 
 

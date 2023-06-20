@@ -48,8 +48,17 @@ set(SOURCES main.cpp
      TryAlgorithm/SimpleProblems/TryRandomQues.hpp
      TryAlgorithm/TryCPPLangg/TrySTL.cpp
      TryAlgorithm/TryCPPLangg/TrySTL.hpp
+     TryAlgorithm/TryCPPLangg/TryOOP.cpp
+     TryAlgorithm/TryCPPLangg/TryOOP.hpp
+     TryAlgorithm/TryCPPLangg/TryConcurrency.cpp
+     TryAlgorithm/TryCPPLangg/TryConcurrency.cpp
+     TryAlgorithm/TryCPPLangg/TryTemplate.cpp
+     TryAlgorithm/TryCPPLangg/TryTemplate.hpp
      TryAlgorithm/TryDataStructure/TryTrees.hpp
-     TryAlgorithm/TryDataStructure/TryTrees.cpp)
+     TryAlgorithm/TryDataStructure/TryTrees.cpp
+     TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp
+     TryAlgorithm/TryCPPLangg/TryCPPConcepts.cpp
+     )
 # add_executable(WithCMake2 main.cpp)
 add_executable(WithCMake2 ${SOURCES})
 
