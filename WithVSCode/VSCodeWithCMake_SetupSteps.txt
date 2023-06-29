@@ -1,0 +1,16 @@
+
+
+STeps for Visual Studio Code for C++ setup with cmake (Windows)
+
+1) Install VS code
+2) Install Cmake -- 
+3) Install MSys2 & in msys-mingw64 terminal --  
+	pacman -S mingw-w64-x86_64-toolchain
+	
+4) Install Visual Studio 2022
+5) In VSCode -- install extrnsions C/C++ (Microsoft) , CMake (Microsoft), CMake Tools
+6) In VSCode -- open source code folder
+	a) Go to View -> Command Palete:
+		i) CMake : Select a kit then visual studio 2022 64 bit
+		ii) CMake: Build
+		iii) Cmake : Run 
