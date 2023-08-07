@@ -58,6 +58,8 @@ set(SOURCES main.cpp
      TryAlgorithm/TryDataStructure/TryTrees.cpp
      TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp
      TryAlgorithm/TryCPPLangg/TryCPPConcepts.cpp
+     TryAlgorithm/TryCPPLangg/TryMemoryManagement.hpp
+     TryAlgorithm/TryCPPLangg/TryMemoryManagement.cpp
      )
 # add_executable(WithCMake2 main.cpp)
 add_executable(WithCMake2 ${SOURCES})
@@ -73,10 +75,10 @@ elseif(NOT Boost_FOUND)
     message("Boost Not Found")
     message("Boost_INCLUDE_DIRS : ${Boost_INCLUDE_DIRS}")
     # set(BOOST_INCLUDEDIR ${"C:\\Program Files\\Boost\\boost_1_82_0"})
-    set(BOOST_INCLUDEDIR "C:\\Program Files\\Boost\\boost_1_82_0")
-    set(BOOST_LIBRARYDIR "C:\\Program Files\\Boost\\boost_1_82_0\\libs")
-    set(BOOST_ROOT "C:\\Program Files\\Boost\\boost_1_82_0\\boost")
-    include_directories(${BOOST_INCLUDEDIR})
+    # set(BOOST_INCLUDEDIR "C:\\Program Files\\Boost\\boost_1_82_0")
+    # set(BOOST_LIBRARYDIR "C:\\Program Files\\Boost\\boost_1_82_0\\libs")
+    # set(BOOST_ROOT "C:\\Program Files\\Boost\\boost_1_82_0\\boost")
+    # include_directories(${BOOST_INCLUDEDIR})
     # LINK_DIRECTORIES(${BOOST_LIBRARYDIR})
     message("Boost_INCLUDE_DIRS : ${Boost_INCLUDE_DIRS}")
     # add_executable(WithCMake2 main.cpp)
@@ -115,3 +117,4 @@ enable_testing()
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
 include(CPack)
+

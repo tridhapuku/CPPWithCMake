@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "lib/math/operations.hpp"
-#include <boost/random.hpp>
+// #include <boost/random.hpp>
 #include "TryAlgorithm/SimpleProblems/TryRandomQues.hpp"
 #include "TryAlgorithm/TryCPPLangg/TrySTL.hpp"
 #include "TryAlgorithm/TryDataStructure/TryTrees.hpp"
@@ -47,11 +47,11 @@ void TestExternalLib()
     //     std::cout<<"Random Val "<<i+1<<" :"<<rand_val<<std::endl;
     // }
 
-    boost::random::mt19937 rng; 
-    boost::random::uniform_int_distribution<> six(1,6);
-    int x = six(rng);
+    // boost::random::mt19937 rng; 
+    // boost::random::uniform_int_distribution<> six(1,6);
+    // int x = six(rng);
 
-    std::cout << "random dice is : " << x << std::endl;
+    // std::cout << "random dice is : " << x << std::endl;
 
 }
 
@@ -82,6 +82,6 @@ int main(int, char**) {
     // TestLibMath();
     // TestExternalLib();
     TryAlgorithm();
-    
+    cout << "Last line258" << endl;
     return 0;
 }

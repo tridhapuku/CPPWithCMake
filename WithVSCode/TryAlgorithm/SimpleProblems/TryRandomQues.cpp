@@ -122,13 +122,13 @@ void RandomProblems::Merge2SortedArr(int *arr1, int *arr2 , int size1, int size2
     
     // int len1 = sizeof(arr1)/sizeof(arr1[0]);
     // int len2 = sizeof(arr2)/sizeof(arr2[0]);
-    int len1 = size1;
-    int len2 = size2;
+    int len1 = 10;
+    int len2 = 10;
     
 
 
     int indx1 = 0, indx2=0 , indxResArr=0;
-    int ResArr[len1 + len2] = {0} ;
+    int ResArr[100] = {0} ;
 
     int smallerLen = (len1 > len2) ? len2 : len1;
     int totalLen = len1 + len2;
