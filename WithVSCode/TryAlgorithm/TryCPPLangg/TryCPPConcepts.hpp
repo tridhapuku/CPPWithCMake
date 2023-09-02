@@ -5,7 +5,7 @@ namespace TryCPPLangg{
     namespace TryCPPConcepts{
 
         void TestForFuncOverloading();
-
+        void TestForRTTI();
         void MainForCPPConcepts();
     }
 

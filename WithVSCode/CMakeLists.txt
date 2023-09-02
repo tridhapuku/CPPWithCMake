@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(WithCMake2 VERSION 0.1.0)
-
+# set (CMAKE_CXX_STANDARD 17)
 #============START - CMAKE TUTORIAL===================
 # https://medium.com/@onur.dundar1/cmake-tutorial-585dd180109b
 # Just adding some testing
@@ -12,7 +12,7 @@ foreach(file ${files})
 endforeach()
 
 message("CMAKE_CXX_STANDARD = ${CMAKE_CXX_STANDARD}")
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 20)
 message("CMAKE_CXX_STANDARD = ${CMAKE_CXX_STANDARD}")
 message("CMAKE_SYSTEM_PROCESSOR = ${CMAKE_SYSTEM_PROCESSOR}")
 message("CMAKE_HOST_SYSTEM_NAME = ${CMAKE_HOST_SYSTEM_NAME}")
@@ -56,6 +56,8 @@ set(SOURCES main.cpp
      TryAlgorithm/TryCPPLangg/TryTemplate.hpp
      TryAlgorithm/TryDataStructure/TryTrees.hpp
      TryAlgorithm/TryDataStructure/TryTrees.cpp
+     TryAlgorithm/TryDataStructure/TryLL.hpp
+     TryAlgorithm/TryDataStructure/TryLL.cpp
      TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp
      TryAlgorithm/TryCPPLangg/TryCPPConcepts.cpp
      TryAlgorithm/TryCPPLangg/TryMemoryManagement.hpp

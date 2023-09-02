@@ -9,6 +9,7 @@
 #include "TryAlgorithm/TryCPPLangg/TryConcurrency.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryTemplate.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp"
+#include "TryAlgorithm/TryDataStructure/TryLL.hpp"
 
 // #define CMAKEMACROSAMPLE "NO SYSTEM NAME"
 #ifndef CMAKEMACROSAMPLE
@@ -18,7 +19,7 @@
 void TestLibMath();
 void TestExternalLib();
 void TryAlgorithm();
-
+void CheckWhichCPPVersion();
 
 
 void TestLibMath(){
@@ -61,10 +62,11 @@ void TryAlgorithm()
     // TryCPPLangg::TrySTL::MainForCPPLangg();
     // TryCPPLangg::TryOOP::MainForOOP();
     // TryCPPLangg::TryConcurrency::MainForConcurrency();
-    // TryDataStructure::TryTrees::mainForTryTrees();
     // TryCPPLangg::TryTemplate::MainForTemplate();
+    // TryCPPLangg::TryCPPConcepts::MainForCPPConcepts();
 
-    TryCPPLangg::TryCPPConcepts::MainForCPPConcepts();
+    // TryDataStructure::TryTrees::mainForTryTrees();
+    TryDataStructure::TryLL::MainForLL();
 }
 
 
@@ -73,12 +75,25 @@ auto sum(int a, int b){
     return a + b;
 }
 
+void CheckWhichCPPVersion()
+{
+    if(__cplusplus == 202101L )  std::cout << "C++ 23";
+    else if (__cplusplus == 202002L) std::cout << "C++20";
+    else if (__cplusplus == 201703L) std::cout << "C++17";
+    else if (__cplusplus == 201402L) std::cout << "C++14";
+    else if (__cplusplus == 201103L) std::cout << "C++11";
+    else if (__cplusplus == 199711L) std::cout << "C++98";
+    else std::cout << "pre-standard C++." << __cplusplus;
+    std::cout << "\n";
+}
+
 int main(int, char**) {
     std::cout << "Hello, world with cmake!\n";
     // std::cout << " 5*2 = " << 5 * 2 << std::endl;
     // std::cout<<"Sum of 3 + 4 :"<<sum(3, 4)<<std::endl;
     std::cout << "New variable is " << CMAKEMACROSAMPLE <<std::endl;
-
+    CheckWhichCPPVersion();
+    
     // TestLibMath();
     // TestExternalLib();
     TryAlgorithm();

@@ -47,9 +47,9 @@ void TryOOP::TestForInheritance(){
 
 
 void TryOOP::MainForOOP(){
-    // TryOOP::TestForClassVehicle();
+    TryOOP::TestForClassVehicle();
     // TryOOP::TestForInheritance();
-    TryOOP::TestForUnnamedNamespace();
+    // TryOOP::TestForUnnamedNamespace();
 }
 
 
