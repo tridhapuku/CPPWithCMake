@@ -5,7 +5,7 @@ project(WithCMake2 VERSION 0.1.0)
 # https://medium.com/@onur.dundar1/cmake-tutorial-585dd180109b
 # Just adding some testing
 message("Hello World from CMakeLists")
-set(files a.txt b.txt c.txt)
+set(files a.txt b.txt c.txt d.txt e.txt)
 
 foreach(file ${files})
     message("FIlename: ${file}")
@@ -44,8 +44,16 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # add_library(math STATIC lib/math/operations.cpp)
 add_subdirectory(lib/math)
 set(SOURCES main.cpp 
+     
+     #Problem
      TryAlgorithm/SimpleProblems/TryRandomQues.cpp
      TryAlgorithm/SimpleProblems/TryRandomQues.hpp
+     TryAlgorithm/SimpleProblems/TrySignalProcessing.hpp
+     TryAlgorithm/SimpleProblems/TrySignalProcessing.cpp
+     TryAlgorithm/SimpleProblems/TryString.hpp
+     TryAlgorithm/SimpleProblems/TryString.cpp
+
+     #CPPLangg Folder
      TryAlgorithm/TryCPPLangg/TrySTL.cpp
      TryAlgorithm/TryCPPLangg/TrySTL.hpp
      TryAlgorithm/TryCPPLangg/TryOOP.cpp
@@ -54,17 +62,25 @@ set(SOURCES main.cpp
      TryAlgorithm/TryCPPLangg/TryConcurrency.cpp
      TryAlgorithm/TryCPPLangg/TryTemplate.cpp
      TryAlgorithm/TryCPPLangg/TryTemplate.hpp
-     TryAlgorithm/TryDataStructure/TryTrees.hpp
-     TryAlgorithm/TryDataStructure/TryTrees.cpp
-     TryAlgorithm/TryDataStructure/TryLL.hpp
-     TryAlgorithm/TryDataStructure/TryLL.cpp
      TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp
      TryAlgorithm/TryCPPLangg/TryCPPConcepts.cpp
      TryAlgorithm/TryCPPLangg/TryMemoryManagement.hpp
      TryAlgorithm/TryCPPLangg/TryMemoryManagement.cpp
+    
+     #Datastructure folder
+     TryAlgorithm/TryDataStructure/TryTrees.hpp
+     TryAlgorithm/TryDataStructure/TryTrees.cpp
+     TryAlgorithm/TryDataStructure/TryLL.hpp
+     TryAlgorithm/TryDataStructure/TryLL.cpp
+     TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.hpp
+     TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.cpp
      )
 # add_executable(WithCMake2 main.cpp)
 add_executable(WithCMake2 ${SOURCES})
+
+#Add subdirectory
+# add_subdirectory(TrySeparateFolder)
+# target_link_libraries(WithCMake2 TrySeparateFolder)
 
 find_package(Boost 1.82)
 

@@ -3,13 +3,21 @@
 #include "lib/math/operations.hpp"
 // #include <boost/random.hpp>
 #include "TryAlgorithm/SimpleProblems/TryRandomQues.hpp"
+#include "TryAlgorithm/SimpleProblems/TrySignalProcessing.hpp"
+#include "TryAlgorithm/SimpleProblems/TryString.hpp"
+
+
 #include "TryAlgorithm/TryCPPLangg/TrySTL.hpp"
-#include "TryAlgorithm/TryDataStructure/TryTrees.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryOOP.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryConcurrency.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryTemplate.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp"
+
+#include "TryAlgorithm/TryDataStructure/TryTrees.hpp"
 #include "TryAlgorithm/TryDataStructure/TryLL.hpp"
+#include "TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.hpp"
+
+#include "TrySeparateFolder/TryBeginnerProb.hpp"
 
 // #define CMAKEMACROSAMPLE "NO SYSTEM NAME"
 #ifndef CMAKEMACROSAMPLE
@@ -20,6 +28,7 @@ void TestLibMath();
 void TestExternalLib();
 void TryAlgorithm();
 void CheckWhichCPPVersion();
+void TrySeparateFolder();
 
 
 void TestLibMath(){
@@ -59,6 +68,10 @@ void TestExternalLib()
 void TryAlgorithm()
 {
     // SimpleProblems::RandomProblems::MainForRandomProblems();
+    SimpleProblems::SignalProcessing::MainForSignalProcessing();
+    // SimpleProblems::TryString::MainForString();
+
+
     // TryCPPLangg::TrySTL::MainForCPPLangg();
     // TryCPPLangg::TryOOP::MainForOOP();
     // TryCPPLangg::TryConcurrency::MainForConcurrency();
@@ -66,10 +79,13 @@ void TryAlgorithm()
     // TryCPPLangg::TryCPPConcepts::MainForCPPConcepts();
 
     // TryDataStructure::TryTrees::mainForTryTrees();
-    TryDataStructure::TryLL::MainForLL();
+    // TryDataStructure::TryLL::MainForLL();
+    // TryDataStructure::TryStackProb::MainForStackProb();
 }
 
-
+void TrySeparateFolder(){
+    // CodingPractice::BeginnerLevel::MainForBeginnerLever();
+}
 
 auto sum(int a, int b){
     return a + b;
@@ -97,6 +113,7 @@ int main(int, char**) {
     // TestLibMath();
     // TestExternalLib();
     TryAlgorithm();
+    // TrySeparateFolder();
     cout << "Last line258" << endl;
     return 0;
 }
