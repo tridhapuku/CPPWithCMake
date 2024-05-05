@@ -219,9 +219,54 @@ void SimpleProblems::SignalProcessing::TestForFIRFilter()
     PrintVector(y);
 }
 
+std::vector<double> SimpleProblems::SignalProcessing::applyEqualization(const std::vector<double> &input_signal, const std::vector<double> &gain_settings, const std::vector<std::vector<double>> &filter_coefficients)
+{
+    //output signal -- same length as input
+
+    //apply gain for each element of the input
+
+    //apply filter coefficients using convolution
+
+
+    //accumulate filtered band to output signal
+
+
+    //normalize o/p signal by no of bands
+    
+    return std::vector<double>();
+}
+
+std::vector<int> SimpleProblems::SignalProcessing::filter(vector<int> b, vector<int> a, vector<int> x)
+{
+    vector<int> y(x.size(),1);
+    y[0] = b[0] * x[0];
+    cout << "\nindx =0 " << " sum= " << y[0] << "\n";
+    for(int i=1; i<x.size() ; i++){
+        int sum = b[0] * x[i];
+        for(int j=1; j<=i && j < b.size(); j++){
+            sum = sum + b[j]*x[i-j] - a[j] *y[i-j];
+        }
+    y[i] = sum;
+    cout << "indx = " << i << " sum= " << sum << "\n";
+    }
+    return y;
+}
+
+void SimpleProblems::SignalProcessing::TestFilterOperation()
+{
+    std::vector<int> a {1 ,2, 3,4};
+    vector<int> b {3,4,5,10};
+    vector<int> x{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+
+    vector<int> y = filter(b,a,x);
+
+    PrintVector(y);
+}
+
 void SimpleProblems::SignalProcessing::MainForSignalProcessing()
 {
     // SimpleProblems::SignalProcessing::TestForFFT();
     // SimpleProblems::SignalProcessing::TestForZeroCrossingDetector();
-    SignalProcessing::TestForFIRFilter();
+    // SignalProcessing::TestForFIRFilter();
+    SignalProcessing::TestFilterOperation();
 }

@@ -2,6 +2,7 @@
 
 #include "lib/math/operations.hpp"
 // #include <boost/random.hpp>
+#include "TryAlgorithm/SimpleProblems/TryDP.hpp"
 #include "TryAlgorithm/SimpleProblems/TryRandomQues.hpp"
 #include "TryAlgorithm/SimpleProblems/TrySignalProcessing.hpp"
 #include "TryAlgorithm/SimpleProblems/TryString.hpp"
@@ -16,6 +17,7 @@
 #include "TryAlgorithm/TryDataStructure/TryTrees.hpp"
 #include "TryAlgorithm/TryDataStructure/TryLL.hpp"
 #include "TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.hpp"
+#include "TryAlgorithm/TryDataStructure/TryGraph.hpp"
 
 #include "TrySeparateFolder/TryBeginnerProb.hpp"
 
@@ -67,6 +69,7 @@ void TestExternalLib()
 
 void TryAlgorithm()
 {
+    // SimpleProblems::DP::MainForDPProblems();
     // SimpleProblems::RandomProblems::MainForRandomProblems();
     SimpleProblems::SignalProcessing::MainForSignalProcessing();
     // SimpleProblems::TryString::MainForString();
@@ -81,6 +84,7 @@ void TryAlgorithm()
     // TryDataStructure::TryTrees::mainForTryTrees();
     // TryDataStructure::TryLL::MainForLL();
     // TryDataStructure::TryStackProb::MainForStackProb();
+    // TryDataStructure::TryGraph::MainForGraph();
 }
 
 void TrySeparateFolder(){

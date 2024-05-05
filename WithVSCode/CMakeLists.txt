@@ -45,7 +45,12 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 add_subdirectory(lib/math)
 set(SOURCES main.cpp 
      
+    TryAlgorithm/TryDataStructure/TryGraph.cpp
+    TryAlgorithm/TryDataStructure/TryGraph.hpp
+
      #Problem
+     TryAlgorithm/SimpleProblems/TryDP.cpp
+     TryAlgorithm/SimpleProblems/TryDP.hpp
      TryAlgorithm/SimpleProblems/TryRandomQues.cpp
      TryAlgorithm/SimpleProblems/TryRandomQues.hpp
      TryAlgorithm/SimpleProblems/TrySignalProcessing.hpp
@@ -75,6 +80,8 @@ set(SOURCES main.cpp
      TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.hpp
      TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.cpp
      )
+
+add_subdirectory(TryAlgorithm)
 # add_executable(WithCMake2 main.cpp)
 add_executable(WithCMake2 ${SOURCES})
 

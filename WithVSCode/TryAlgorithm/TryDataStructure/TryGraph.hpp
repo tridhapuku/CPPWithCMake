@@ -6,6 +6,7 @@
 #include <vector>
 #include <list>
 #include <queue>
+#include <stack>
 using namespace std;
 
 namespace TryDataStructure{
@@ -21,6 +22,8 @@ class Graph{
     void addEdge(int m, int n);
 
     void BFS(int startNode);
+
+    void BFS2(int startNode);
 
 };
         

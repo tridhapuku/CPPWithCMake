@@ -21,7 +21,17 @@ namespace SimpleProblems{
         vector<int> GetFIRResponse(vector<int>& filter, vector<int>& impulse);
         void TestForFIRFilter();
 
+        //Audio equlaizer
+        std::vector<double> applyEqualization(const std::vector<double>& input_signal,
+                                      const std::vector<double>& gain_settings,
+                                      const std::vector<std::vector<double>>& filter_coefficients);
+
+        void TestForAudioEqualizer();
         
+        std::vector<int> filter(vector<int> b, vector<int> a, vector<int> x);
+        void TestFilterOperation();
+        
+
         void MainForSignalProcessing();
     }
 }

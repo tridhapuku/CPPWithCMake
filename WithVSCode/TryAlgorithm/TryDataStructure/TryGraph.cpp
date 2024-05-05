@@ -46,6 +46,42 @@ void Graph::BFS(int startNode){
   }
 }
 
+void TryDataStructure::TryGraph::Graph::BFS2(int startNode)
+{
+  //vector for visited node
+  //stack for node
+    // push startNode on stack
+  //iterate till stack is not empty
+    // get from stack 
+    // print the value
+    //iterate for all the childre
+    //if children is not visited 
+      //add to the stack
+    
+  vector<bool> visited (NoOfVertices , false);
+  stack<int> stack1;
+
+  stack1.push(startNode);
+  cout << "Printing Graph Nodes \n" ;
+  while(!stack1.empty())
+  {
+    int getStackElem = stack1.top();
+    cout << getStackElem << " ";
+    visited[getStackElem] = true;
+    stack1.pop();
+    for (auto &&i : adj[getStackElem])
+    {
+        if(visited[i] == false)
+        {
+          stack1.push(i);
+        }
+    }
+    
+
+  }
+
+}
+
 void TryDataStructure::TryGraph::TestForGraphBFS()
 {
   //        1 ---- 3
@@ -64,6 +100,7 @@ void TryDataStructure::TryGraph::TestForGraphBFS()
   G.addEdge(3, 4);
 
   G.BFS(0);
+  G.BFS2(0);
 }
 
 void TryDataStructure::TryGraph::MainForGraph()
