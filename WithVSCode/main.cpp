@@ -6,7 +6,7 @@
 #include "TryAlgorithm/SimpleProblems/TryRandomQues.hpp"
 #include "TryAlgorithm/SimpleProblems/TrySignalProcessing.hpp"
 #include "TryAlgorithm/SimpleProblems/TryString.hpp"
-
+#include "TryAlgorithm/SimpleProblems/TryRecursion.hpp"
 
 #include "TryAlgorithm/TryCPPLangg/TrySTL.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryOOP.hpp"
@@ -71,6 +71,7 @@ void TryAlgorithm()
 {
     // SimpleProblems::DP::MainForDPProblems();
     // SimpleProblems::RandomProblems::MainForRandomProblems();
+    // SimpleProblems::TryRecursion::MainForRecursion();
     SimpleProblems::SignalProcessing::MainForSignalProcessing();
     // SimpleProblems::TryString::MainForString();
 

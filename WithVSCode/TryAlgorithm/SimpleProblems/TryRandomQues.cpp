@@ -647,6 +647,104 @@ void SimpleProblems::RandomProblems::TestForLIS()
     cout << "\n";
 }
 
+int SimpleProblems::RandomProblems::ValueForPassChar(char passChar){
+    //Value(passChar)
+        //if int(passChar) lies b/w 65-90
+            // return int(passChar) - 65
+        //else if int(passChar) lies b/w 97-122
+            //return int(passChar) - 97
+        //else
+            // return 0
+
+    int valForPassChar = int(passChar);
+    if(valForPassChar >= 65 && valForPassChar <= 90){
+        return valForPassChar - 65;
+    }
+    else if(valForPassChar >= 97 && valForPassChar <= 122){
+        return valForPassChar - 97;
+    }
+    else{
+        return -1;
+    }
+}
+
+
+
+string SimpleProblems::RandomProblems::Encrypt(string str1, string password)
+{
+    //Pseudo-code
+    //Loop for each character of str1
+        // check if char lies b/w 65-90 or, 97-122
+        // if yes: 
+            // if char lies b/w 65-90 or, 97-122
+                // encrypted[i] = char(int(char) + Value(passChar))
+        //if no encrypted[i] = char
+        //i++ , k++ if(k == len(passWord)  k = 0)
+    
+    int lenOfPass = password.size(); 
+    
+    if(lenOfPass == 0){
+        return str1;
+    }
+
+    string trimmedPassword = "";
+    //trim password to have letters only
+    for (size_t i = 0; i < password.size(); i++)
+    {
+        if(ValueForPassChar(password[i]) != -1){
+            trimmedPassword.push_back(password[i]);
+        }
+    }
+    
+    cout << "Trimmed-Password: " << trimmedPassword << "\n";
+    int lenOfTrimmedPass = trimmedPassword.size();
+    if(lenOfTrimmedPass == 0){
+        return str1;
+    }
+
+    string encrypted = "";
+    int k=0;
+    //Loop for each character of str1
+        // check if char lies b/w 65-90 or, 97-122
+        // if yes: 
+            // if char lies b/w 65-90 or, 97-122
+                // encrypted[i] = char(int(char) + Value(passChar))
+        //if no encrypted[i] = char
+        //i++ , k++ if(k == len(passWord)  k = 0)
+    for (size_t i = 0; i < str1.size(); i++)
+    {
+        /* code */
+        char txtChar = str1[i];
+        int valForTxtChar = int(txtChar);
+
+        char passChar = trimmedPassword[k];
+        
+        if( (valForTxtChar >= 65 && valForTxtChar <= 90) ||  
+            (valForTxtChar >= 97 && valForTxtChar <= 122) )
+        {   
+            char Encryptedchar = char(valForTxtChar + ValueForPassChar(passChar)) ;
+            encrypted.push_back(Encryptedchar);
+            // cout << "Encrypted: " << Encryptedchar << "\n";
+            k++;
+            k = k % lenOfTrimmedPass;
+        }
+        else{
+            encrypted.push_back(txtChar);
+        }
+
+    }
+    
+    return encrypted;
+}
+
+void SimpleProblems::RandomProblems::TestForEncrypt()
+{
+    string str1 = "Hello World!"; //"Hello World!"; //"aaaaaa";
+    string password = "12~+Abc123" ; //"abc";
+
+    cout << Encrypt(str1, password) ;
+}
+
 void RandomProblems::MainForRandomProblems()
 {
     // RandomProblems::TestReverseString();
@@ -662,5 +760,6 @@ void RandomProblems::MainForRandomProblems()
     // RandomProblems::TestForBST();
     // RandomProblems::TestForMaxSubArraySum();
 
-    RandomProblems::TestForLIS();
+    // RandomProblems::TestForLIS();
+    RandomProblems::TestForEncrypt();
 }

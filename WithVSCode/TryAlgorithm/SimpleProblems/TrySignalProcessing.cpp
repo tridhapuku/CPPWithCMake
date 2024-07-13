@@ -204,19 +204,95 @@ vector<int> SimpleProblems::SignalProcessing::GetFIRResponse(vector<int>& input,
         y[i] = tempSum;
         
     }
-    PrintVector(y);
+    // PrintVector(y);
+    return y;
+}
+
+vector<int> SimpleProblems::SignalProcessing::GetFIRResponseSymm1(vector<int> &input, vector<int> &filter)
+{
+    
+    int inputLen = input.size();
+    int filterLen = filter.size();
+
+    //boundary case
+    int OutLen = inputLen + filterLen - 1;
+
+    vector<int> y(OutLen , 0);
+    //y[n] = sum(h[k] .{ x[n-k] + x[n-(L-1-k)]}) + h[L-1/2].x[n-(L-1)/2] , k=0 to L-1/2
+    // N = lenY , M = lenX ,  L = lenH
+
+    //for n=0 to N
+    // sum = 0, temp =0
+    // for k = 0 to L-1/2
+        //if 0 <= n-k < M
+            //val1 = x[n-k] else, val1 = 0
+        // if 0 <= n+k - (L-1) < M
+            // val2 = x[n+k-(L-1)] else, val2 = 0
+        //temp = val1 + val2
+        // sum = sum + h[k] . temp
+
+    //middle-one
+        // if 0 <= n - (L-1)/2 < M
+            // sum2 = sum + h[L-1/2] . x[n-(n - (L-1)/2)]
+        // y[n] = sum2
+    int midFilter = filterLen/2;
+    cout << "filterLen " << filterLen << "\n";
+    cout << "midFilter " << midFilter << "\n";
+
+    for (size_t n = 0; n < OutLen; n++)
+    {
+        int sum = 0 ;
+        for (size_t k = 0; k < midFilter; k++)
+        {
+            int val1 = 0, val2 = 0 , temp = 0; 
+            //if 0 <= n-k < M
+                //val1 = x[n-k] else, val1 = 0
+            if (n-k >= 0 && n-k < inputLen)
+            {
+                val1 = input[n-k];
+            }
+
+            // if 0 <= n+k - (L-1) < M
+                // val2 = x[n+k-(L-1)] else, val2 = 0
+            if (n+k-(filterLen -1) >=0 && n+k-(filterLen -1) < inputLen)
+            {
+                val2 = input[n+k-(filterLen -1)];
+            }
+            temp = val1 + val2;
+            sum = sum + temp * filter[k];
+        }
+       //middle-one
+        // if 0 <= n - (L-1)/2 < M
+            // sum2 = sum + h[L-1/2] . x[n- (L-1)/2)] 
+        int midFilterIndx = (filterLen -1 )/2;
+        cout << "midFilterIndx" << midFilterIndx << "\n";
+        int val3 = 0;
+        if (n - midFilterIndx >= 0 && n - midFilterIndx < inputLen)
+        {
+            val3 = input[n - midFilterIndx];
+        }
+
+        y[n] = sum + val3 * filter[midFilterIndx];  
+    }
+    // PrintVector(y);
+
+
     return y;
 }
 
 void SimpleProblems::SignalProcessing::TestForFIRFilter()
 {
     //
-    vector<int> input { 2, 1, 3, 2, 4};
-    vector<int> filter {1, -1, 2};
+    vector<int> input { 2, 1, 3, 2, 4, 10, 11, 13, -2, -1,100};
+    // vector<int> input { 1};
+    // vector<int> filter {1, -1, 1, 2, 8, 2, 1, -1, 1};
+    // vector<int> filter {1, -1, 1,4,1,-1,1};
+    vector<int> filter {1, -1, 1,-1,1};
 
     vector<int> y = SignalProcessing::GetFIRResponse(input, filter);
-
+    vector<int> y1 = SignalProcessing::GetFIRResponseSymm1(input, filter);
     PrintVector(y);
+    PrintVector(y1);
 }
 
 std::vector<double> SimpleProblems::SignalProcessing::applyEqualization(const std::vector<double> &input_signal, const std::vector<double> &gain_settings, const std::vector<std::vector<double>> &filter_coefficients)
@@ -267,6 +343,6 @@ void SimpleProblems::SignalProcessing::MainForSignalProcessing()
 {
     // SimpleProblems::SignalProcessing::TestForFFT();
     // SimpleProblems::SignalProcessing::TestForZeroCrossingDetector();
-    // SignalProcessing::TestForFIRFilter();
-    SignalProcessing::TestFilterOperation();
+    SignalProcessing::TestForFIRFilter();
+    // SignalProcessing::TestFilterOperation();
 }

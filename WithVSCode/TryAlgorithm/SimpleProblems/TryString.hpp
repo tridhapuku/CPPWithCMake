@@ -16,8 +16,11 @@ namespace SimpleProblems{
         void GenerateCompleteCode(int NoOfElements, string fileName);
         void TestForGenCompleteCode();
 
-        //
+        //Generate a vector for FIR filter a 
+        void GenerateVectorOfLenWith1Elem(int NoOfElems, string fileName);
+        void TestForGenVectorOfLenWith1Elem();
 
+        
         void MainForString();
     }
 }

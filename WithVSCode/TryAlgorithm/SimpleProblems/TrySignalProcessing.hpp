@@ -19,6 +19,8 @@ namespace SimpleProblems{
 
         //fir-filter 
         vector<int> GetFIRResponse(vector<int>& filter, vector<int>& impulse);
+        vector<int> GetFIRResponseSymm1(vector<int>& filter, vector<int>& impulse);
+
         void TestForFIRFilter();
 
         //Audio equlaizer

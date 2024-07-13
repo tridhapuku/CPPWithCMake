@@ -53,6 +53,8 @@ set(SOURCES main.cpp
      TryAlgorithm/SimpleProblems/TryDP.hpp
      TryAlgorithm/SimpleProblems/TryRandomQues.cpp
      TryAlgorithm/SimpleProblems/TryRandomQues.hpp
+     TryAlgorithm/SimpleProblems/TryRecursion.cpp
+     TryAlgorithm/SimpleProblems/TryRecursion.hpp
      TryAlgorithm/SimpleProblems/TrySignalProcessing.hpp
      TryAlgorithm/SimpleProblems/TrySignalProcessing.cpp
      TryAlgorithm/SimpleProblems/TryString.hpp

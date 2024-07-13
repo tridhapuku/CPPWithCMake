@@ -70,7 +70,12 @@ namespace RandomProblems{
     int  LengthofLongestIncreasingSeq(vector<int> &a);
     void TestForLIS();
 
-
+    //P13 -- Encrypt
+    //Problems: Encrypt and Decrypt
+    string Encrypt(string str1 , string password);
+    int ValueForPassChar(char passChar);
+    void TestForEncrypt();
+    
     void MainForRandomProblems();
 }
 }

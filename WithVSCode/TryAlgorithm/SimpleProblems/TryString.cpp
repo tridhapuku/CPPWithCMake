@@ -93,8 +93,47 @@ void SimpleProblems::TryString::TestForGenCompleteCode()
     GenerateCompleteCode(1000000, "delay1MBack2Back.py");
 }
 
+void SimpleProblems::TryString::GenerateVectorOfLenWith1Elem(int NoOfElements, string fileName)
+{
+
+    //open the file & write to the file
+    ofstream outFile(fileName);
+
+    //write Init code to the file
+    outFile << InputCode << "\n";
+    outFile << "\tvar a = [1,  " ;
+
+    //get the variable-loop
+    //write to the file
+
+    for (size_t i = 1; i < NoOfElements -1; i++)
+    {
+        /* code */
+        
+        outFile << "0 " << "," ;
+        // tempElem = tempElem + increment;
+
+    }
+
+    outFile << "0 " << " ];" ;
+    outFile << "\n";
+
+    //append the end-code
+    outFile << EndCode ;
+
+    //close the file
+    outFile.close();
+   
+}
+
+void SimpleProblems::TryString::TestForGenVectorOfLenWith1Elem()
+{
+    GenerateVectorOfLenWith1Elem(51, "testA.py");
+}
+
 void SimpleProblems::TryString::MainForString()
 {
     // TestForGenerateVectorOfDesiredLen();
-    TestForGenCompleteCode();
+    // TestForGenCompleteCode();
+    TestForGenVectorOfLenWith1Elem();
 }
