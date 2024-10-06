@@ -280,6 +280,64 @@ vector<int> SimpleProblems::SignalProcessing::GetFIRResponseSymm1(vector<int> &i
     return y;
 }
 
+vector<int> SimpleProblems::SignalProcessing::ReverseInput(vector<int> &input)
+{   
+    int inputLen = input.size();
+    vector<int> y(inputLen , 0);
+
+    //Psudo code:
+        //loop from 0 to N-1
+            // y[i] = x[N-1-i]
+
+    for (size_t i = 0; i < inputLen; i++)
+    {
+        y[i] = input[inputLen-1-i];
+    }
+    
+    return y;
+}
+
+vector<int> SimpleProblems::SignalProcessing::GetFIRResponseYSymm(vector<int> &input, vector<int> &reverse)
+{
+    //Pseudo-code:
+        //N=lenY , M=lenX here, output is symm ie, y[n] = y[N-1-n]
+        //y[n] = x[n] conv x[-n] ie, x[M-1-n] ie, x2[n]
+        //y[n] = SumOverAllk x[k] * x2[n-k]  , 0<=k<M  , 0<=n<N
+        //     = SumOverAllk x[k] * x[M-1-(n-k)] , check for 0<=M+k-1-n<M
+
+        //code:
+            //for n=0 to (N+1)/2
+                // sum =0
+                // for k=0 to M
+                    // if( 0<= M+k-n-1 <M)
+                        // sum = sum + x[k] * x[M+k-n-1]
+                //y[n]= sum
+                //y[N-1-n] = sum
+    
+    int inputLen = input.size();
+    int OutLen = inputLen * 2 -1;
+    int midOutLen = (OutLen + 1)/2;
+    vector<int> y(OutLen, 0);
+
+    for (size_t n = 0; n < midOutLen; n++)
+    {
+        int sum = 0;
+        for (size_t k = 0; k < inputLen; k++)
+        {
+            int IndxForReverse = inputLen + k - n-1;
+            if(IndxForReverse >= 0 && IndxForReverse < inputLen){
+                sum = sum + input[k] * input[IndxForReverse];
+            }
+        }
+        cout << "y[" << n << "]= " << sum << "\n"; 
+        y[n] = sum;
+        y[OutLen - 1 -n] = sum;
+        
+    }
+    PrintVector(y);
+    return y;
+}
+
 void SimpleProblems::SignalProcessing::TestForFIRFilter()
 {
     //
@@ -291,8 +349,17 @@ void SimpleProblems::SignalProcessing::TestForFIRFilter()
 
     vector<int> y = SignalProcessing::GetFIRResponse(input, filter);
     vector<int> y1 = SignalProcessing::GetFIRResponseSymm1(input, filter);
-    PrintVector(y);
-    PrintVector(y1);
+    // PrintVector(y);
+    // PrintVector(y1);
+
+    vector<int> x1{1,2,3,4};
+    vector<int> reverseX1 = ReverseInput(x1);
+    // PrintVector(reverseX1);
+
+    vector<int> x2{1,2,3,4,4,5,6,7};
+    vector<int> reverseX2 = ReverseInput(x2);
+    vector<int> YSymm = GetFIRResponseYSymm(x2 , reverseX2);
+    PrintVector(YSymm);
 }
 
 std::vector<double> SimpleProblems::SignalProcessing::applyEqualization(const std::vector<double> &input_signal, const std::vector<double> &gain_settings, const std::vector<std::vector<double>> &filter_coefficients)
@@ -335,8 +402,9 @@ void SimpleProblems::SignalProcessing::TestFilterOperation()
     vector<int> x{1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
 
     vector<int> y = filter(b,a,x);
-
     PrintVector(y);
+
+    
 }
 
 void SimpleProblems::SignalProcessing::MainForSignalProcessing()
