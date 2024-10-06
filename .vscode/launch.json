@@ -1,0 +1,44 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // {
+        //     "name": "C++ Launch",
+        //     "type": "cppdbg",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/build/bin/WithCMake2.exe",
+        //     // "program": "${workspaceFolder}/build/bin/Debug/WithCMake2.exe", // this is the path for windows
+        //     // "args": [ "/home/local/ASUAD/akuma294/Proj1_LLVM/llvm-project/mlir/test/Examples/Toy/Ch2/codegen.toy", 
+        //     // "-emit=mlir",   
+        //     // ],
+        //     "cwd": "${workspaceFolder}/",
+        //     // "cwd": "${workspaceFolder}/",
+        //     // "launchCompleteCommand": "exec-run",
+        //     "linux": {
+        //       "MIMode": "gdb",
+        //       "miDebuggerPath": "/usr/bin/gdb"
+        //     },
+        // },
+
+        {
+          // Configuration for Windows using Visual Studio Build Tools
+          "name": "Launch with VS Debugger on Windows",
+          "type": "cppvsdbg",
+          "request": "launch",
+          "program": "${workspaceFolder}/build/bin/Debug/WithCMake2.exe", // Windows path
+          "args": [],
+          "stopAtEntry": false,
+          "cwd": "${workspaceFolder}",
+          "environment": [],
+          "externalConsole": true,
+          // "preLaunchTask": "build",  // If you have tasks.json for Windows builds
+          "console": "integratedTerminal",
+          "logging": {
+              "moduleLoad": false,
+              "trace": false
+          }
+      }
+    ]
+}

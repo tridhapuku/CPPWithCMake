@@ -13,4 +13,6 @@ STeps for Visual Studio Code for C++ setup with cmake (Windows)
 	a) Go to View -> Command Palete:
 		i) CMake : Select a kit then visual studio 2022 64 bit
 		ii) CMake: Build
-		iii) Cmake : Run 
+		iii) launch.json file in VS Code: Enable Configuration for Windows using Visual Studio Build Tools
+		iii) Cmake : Run or use Run->Start Debugging option from GUI
+		iv)
