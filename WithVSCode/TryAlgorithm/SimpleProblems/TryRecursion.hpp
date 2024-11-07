@@ -20,6 +20,18 @@ namespace SimpleProblems{
         void PrintNto1Backtrack(int n, int N);
         void TestPrintNto1Backtrack();
         
+        //P3 -- Print All Subsequence
+        void PrintAllSubsequence(int indx, vector<int> &arr, vector<int> &subArr, int N);
+        void TestPrintAllSubSeq();
+
+        //P4-- Count ALl Subsequence
+        int CountAllSubseq(int indx, vector<int> &arr, int sum , int target, int N);
+        void TestCountAllSubseq();
+
+        //P5 -- MaxSum for non-adjacent Elem
+        int NonAdjacentElemSum(int indx, vector<int> &arr);
+        void TestNonAdjacentElemSum();
+
         void MainForRecursion();
 
     }

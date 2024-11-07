@@ -745,6 +745,52 @@ void SimpleProblems::RandomProblems::TestForEncrypt()
     cout << Encrypt(str1, password) ;
 }
 
+bool SimpleProblems::RandomProblems::isValidParenthesis(string s)
+{
+    map<char,char> map1{ {')','('},
+                           { ']','['},
+                           { '}','{'} };
+
+    stack<char> stack1;
+
+    //for all 
+    for (size_t i = 0; i < s.size(); i++)
+    {
+        char getChar = s[i];
+
+        //check for open brackets -- check for existence in values
+        bool foundOpenBrack = any_of(map1.begin(), map1.end(), [&getChar](const auto& pair){return pair.second == getChar;});
+        if(foundOpenBrack){
+            stack1.push(getChar);
+        }
+        //closing bracket check
+        else if(map1.find(getChar) != map1.end()){
+            //check if stack is empty --> return false
+            // check if stack top ie, open bracket matches value of current key ie, closing bracket
+            if(stack1.empty()) return false;
+            if(stack1.top() != map1[getChar]) return false;
+            stack1.pop();
+        }
+        else{ cout << "Symbols not bracket\n"; return false; }
+
+    }
+
+    if(!stack1.empty()) {
+        while(!stack1.empty()) stack1.pop();
+        return false;
+    }
+   
+    return true;
+}
+
+void SimpleProblems::RandomProblems::TestForParenthesis()
+{
+    string s1 = "[](){";
+
+    cout << "isValidParenthesis: " << isValidParenthesis(s1) << endl;
+
+}
+
 void RandomProblems::MainForRandomProblems()
 {
     // RandomProblems::TestReverseString();
@@ -761,5 +807,6 @@ void RandomProblems::MainForRandomProblems()
     // RandomProblems::TestForMaxSubArraySum();
 
     // RandomProblems::TestForLIS();
-    RandomProblems::TestForEncrypt();
+    // RandomProblems::TestForEncrypt();
+    TestForParenthesis();
 }

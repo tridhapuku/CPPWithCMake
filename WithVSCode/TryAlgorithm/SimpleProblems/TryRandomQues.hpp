@@ -75,7 +75,11 @@ namespace RandomProblems{
     string Encrypt(string str1 , string password);
     int ValueForPassChar(char passChar);
     void TestForEncrypt();
-    
+
+    //P14-- ValidParenthesis
+    bool isValidParenthesis(string s);
+    void TestForParenthesis();
+
     void MainForRandomProblems();
 }
 }

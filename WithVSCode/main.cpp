@@ -13,6 +13,8 @@
 #include "TryAlgorithm/TryCPPLangg/TryConcurrency.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryTemplate.hpp"
 #include "TryAlgorithm/TryCPPLangg/TryCPPConcepts.hpp"
+#include "TryAlgorithm/TryCPPLangg/TryMemoryManagement.hpp"
+
 
 #include "TryAlgorithm/TryDataStructure/TryTrees.hpp"
 #include "TryAlgorithm/TryDataStructure/TryLL.hpp"
@@ -70,9 +72,9 @@ void TestExternalLib()
 void TryAlgorithm()
 {
     // SimpleProblems::DP::MainForDPProblems();
-    // SimpleProblems::RandomProblems::MainForRandomProblems();
+    SimpleProblems::RandomProblems::MainForRandomProblems();
     // SimpleProblems::TryRecursion::MainForRecursion();
-    SimpleProblems::SignalProcessing::MainForSignalProcessing();
+    // SimpleProblems::SignalProcessing::MainForSignalProcessing();
     // SimpleProblems::TryString::MainForString();
 
 
@@ -81,6 +83,7 @@ void TryAlgorithm()
     // TryCPPLangg::TryConcurrency::MainForConcurrency();
     // TryCPPLangg::TryTemplate::MainForTemplate();
     // TryCPPLangg::TryCPPConcepts::MainForCPPConcepts();
+    // TryCPPLangg::TryMemoryManagement::MainForMemoryManagement();
 
     // TryDataStructure::TryTrees::mainForTryTrees();
     // TryDataStructure::TryLL::MainForLL();
