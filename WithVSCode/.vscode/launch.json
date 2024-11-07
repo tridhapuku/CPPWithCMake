@@ -1,0 +1,28 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug with MinGW",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${workspaceFolder}/build/bin/WithCMake2.exe",  // Adjust the path to your compiled executable
+        "args": [],  // Any command-line arguments for your program
+        "stopAtEntry": false,
+        "cwd": "${workspaceFolder}",
+        "environment": [],
+        "externalConsole": false,  // Don't Use an external console for better support with MinGW
+        "MIMode": "gdb",
+        "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe",  // Adjust this path to your gdb.exe location in MSYS2
+        "setupCommands": [
+          {
+            "description": "Enable pretty-printing for gdb",
+            "text": "-enable-pretty-printing",
+            "ignoreFailures": true
+          }
+        ],
+        "preLaunchTask": "build",  // This runs your 'build' task from tasks.json before debugging
+        // "externalConsole": "integratedTerminal"  // Can be "externalTerminal" if you prefer
+      }
+    ]
+  }
+  
