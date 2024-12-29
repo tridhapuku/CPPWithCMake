@@ -4,6 +4,7 @@
 namespace TryCPPLangg{
     namespace TryConcurrency{
         void ThreadTask();
+        void ThreadTask1();
         void TestForThreadTask();
         
         void TrySysInfo();

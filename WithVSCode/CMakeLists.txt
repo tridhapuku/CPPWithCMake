@@ -44,11 +44,12 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
 # add_library(math STATIC lib/math/operations.cpp)
 add_subdirectory(lib/math)
 set(SOURCES main.cpp 
-     
-    TryAlgorithm/TryDataStructure/TryGraph.cpp
-    TryAlgorithm/TryDataStructure/TryGraph.hpp
+    GlobalHelper.cpp
+    GlobalHelper.hpp  
 
      #Problem
+     TryAlgorithm/SimpleProblems/TryGreedy.cpp
+     TryAlgorithm/SimpleProblems/TryGreedy.hpp
      TryAlgorithm/SimpleProblems/TryDP.cpp
      TryAlgorithm/SimpleProblems/TryDP.hpp
      TryAlgorithm/SimpleProblems/TryRandomQues.cpp
@@ -81,10 +82,15 @@ set(SOURCES main.cpp
      TryAlgorithm/TryDataStructure/TryLL.cpp
      TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.hpp
      TryAlgorithm/TryDataStructure/TrySTLProblems/TryStackProb.cpp
+     TryAlgorithm/TryDataStructure/TryGraph.cpp
+     TryAlgorithm/TryDataStructure/TryGraph.hpp
+ 
      )
 
 add_subdirectory(TryAlgorithm)
 # add_executable(WithCMake2 main.cpp)
+# target_link_libraries(GlobalHelper STATIC GlobalHelper.cpp)
+# target_include_directories(GlobalHelper PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 add_executable(WithCMake2 ${SOURCES})
 
 #Add subdirectory

@@ -1,7 +1,10 @@
 #include <iostream>
 
 #include "lib/math/operations.hpp"
+#include "GlobalHelper.hpp"
+
 // #include <boost/random.hpp>
+#include "TryAlgorithm/SimpleProblems/TryGreedy.hpp"
 #include "TryAlgorithm/SimpleProblems/TryDP.hpp"
 #include "TryAlgorithm/SimpleProblems/TryRandomQues.hpp"
 #include "TryAlgorithm/SimpleProblems/TrySignalProcessing.hpp"
@@ -33,7 +36,7 @@ void TestExternalLib();
 void TryAlgorithm();
 void CheckWhichCPPVersion();
 void TrySeparateFolder();
-
+void CheckGlobalHelper();
 
 void TestLibMath(){
     math::operations op;
@@ -71,8 +74,9 @@ void TestExternalLib()
 
 void TryAlgorithm()
 {
+    SimpleProblems::Greedy::MainForGreedy();
     // SimpleProblems::DP::MainForDPProblems();
-    SimpleProblems::RandomProblems::MainForRandomProblems();
+    // SimpleProblems::RandomProblems::MainForRandomProblems();
     // SimpleProblems::TryRecursion::MainForRecursion();
     // SimpleProblems::SignalProcessing::MainForSignalProcessing();
     // SimpleProblems::TryString::MainForString();
@@ -93,6 +97,13 @@ void TryAlgorithm()
 
 void TrySeparateFolder(){
     // CodingPractice::BeginnerLevel::MainForBeginnerLever();
+}
+
+void CheckGlobalHelper()
+{
+    vector<int> a{1,2,3};
+
+    GlobalHelper::PrintVect(a);
 }
 
 auto sum(int a, int b){
@@ -117,11 +128,12 @@ int main(int, char**) {
     // std::cout<<"Sum of 3 + 4 :"<<sum(3, 4)<<std::endl;
     std::cout << "New variable is " << CMAKEMACROSAMPLE <<std::endl;
     CheckWhichCPPVersion();
-    
+    // CheckGlobalHelper();
+
     // TestLibMath();
     // TestExternalLib();
     TryAlgorithm();
     // TrySeparateFolder();
-    cout << "Last line258" << endl;
+    cout << "Last line258 " << endl;
     return 0;
 }
